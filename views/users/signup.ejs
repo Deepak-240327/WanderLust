@@ -1,0 +1,35 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row">
+    <div class="col-4 offset-4 mb-3">
+        <h3>Signup</h3>
+        <form method="post" action="/user/signup" class="needs-validation signup mt-3" novalidate>
+            <div class="mb-3 ms-4 me-4 mt-3">
+                <label for="name" class="form-label ">Name</label>
+                <input id="name" type="text" placeholder="Enter your name" name="user[name]" class="form-control" required >
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid Name.</div>
+            </div>
+            <div class="mb-3 ms-4 me-4">
+                <label for="email" class="form-label ">Email</label>
+                <input id="email" type="text" placeholder="Enter your Email Id" name="user[email]" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid Email Id.</div>
+            </div>
+            <div class="mb-3 ms-4 me-4">
+                <label for="username" class="form-label ">Username</label>
+                <input id="username" type="text" placeholder="Enter a username" name="user[username]" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a Username.</div>
+            </div>
+            <div class="mb-3 ms-4 me-4">
+                <label for="password" class="form-label ">Password</label>
+                <input id="password" type="password" placeholder="Enter a password" name="user[password]" class="form-control" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter your password.</div>
+            </div>
+            <button class="btn btn-dark btn-lg ms-4">Create New Account</button>
+            <p class="ms-4">Already have a account? <a href="/user/login" class="redirect">Login</a></p>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+<% layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="row">
+    <div class="col-8 offset-2">
+    <h3>Edit your Listing</h3>
+    <div class="headimage col-12">
+        <img id="headimage" src="<%= list.image && list.image.url ? list.image.url : 'https://images.unsplash.com/photo-1625505826533-5c80aca7d157?auto=format&fit=crop&w=800&q=60' %>" alt="<%= list.image && list.image.filename ? list.image.filename : 'Listing Image' %>">
+    </div>
+    <form method="post" action="/listings/<%=list._id%>?_method=PUT" class="needs-validation" enctype="multipart/form-data" novalidate>
+        <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input type="text" name="title" class="form-control" id="title" value="<%= list.title %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid title.</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="description" class="form-control" id="description" required><%= list.description %></textarea>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a valid description.</div>
+        </div>
+        <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input type="number" id="price"  class="form-control" name="price" value="<%= list.price %>" required>
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a valid price.</div>
+        </div>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="location" class="form-label">Location</label>
+                <input type="text" id="location" class="form-control" name="location" value="<%= list.location %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid location.</div>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" id="country" class="form-control" name="country" value="<%= list.country %>" required>
+                <div class="valid-feedback">Looks good!</div>
+                <div class="invalid-feedback">Please enter a valid country.</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Upload New Image</label>
+            <input type="file" id="image" class="form-control" name="image">
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a valid image url.</div>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-dark btn-lg">Submit</button>
+        </div>
+    </form>
+    </div>
+    </div>
+</body>

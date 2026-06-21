@@ -1,0 +1,36 @@
+<% if(newListing && newListing.length){ %>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= newListing %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<% if(listingUpdated && listingUpdated.length){ %>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= listingUpdated %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<% if(listingDeleted && listingDeleted.length){ %>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= listingDeleted %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<% if(error && error.length){ %>
+<div class="alert alert-danger alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= error %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+<% if(success && success.length){ %>
+<div class="alert alert-success alert-dismissible fade show col-6 offset-3" role="alert">
+  <%= success %>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<% } %>
+
+
